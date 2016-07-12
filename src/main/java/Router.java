@@ -1,14 +1,14 @@
 import java.util.*;
 
 public class Router {
-    private final HashMap<HTTPMetods, Map<String, Object>> routingMap = new HashMap<>();
+    private final HashMap<HTTPMetods, Map<String, Object>> routingMap = new HashMap<HTTPMetods, Map<String, Object>>();
 
     private void addRouting(HTTPMetods method, String path, Object object) {
         if (routingMap.containsKey(method)) {
             Map<String, Object> innerMap = routingMap.get(method);
             innerMap.put(path, object);
         } else {
-            Map<String, Object> innerMap = new HashMap<>();
+            Map<String, Object> innerMap = new HashMap<String, Object>();
             innerMap.put(path, object);
             routingMap.put(method, innerMap);
         }
@@ -36,7 +36,7 @@ public class Router {
                 paramsString = paramsString.substring(0, paramsString.length() - 2);
             return Arrays.asList(paramsString.split("&"));
         } else {
-            return new ArrayList<>();
+            return new ArrayList<String>();
         }
     }
 }
