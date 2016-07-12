@@ -14,12 +14,12 @@ public class Router {
         }
     }
 
-    protected Router GET(String path, Object object) {
+    public Router GET(String path, Object object) {
         addRouting(HTTPMetods.GET, path, object);
         return this;
     }
 
-    protected Router POST(String path, Object object) {
+    public Router POST(String path, Object object) {
         addRouting(HTTPMetods.POST, path, object);
         return this;
     }
