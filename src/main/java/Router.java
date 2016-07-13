@@ -30,8 +30,9 @@ public class Router {
 
 
     private List<String> getParametersFromPath(String path) {
-        if (path.length() > 0) {
-            String paramsString = path.substring(path.indexOf("?"));
+        int i = path.indexOf("?");
+        if (path.length() > 0 && i >= 0) {
+            String paramsString = path.substring(i);
             if (paramsString.substring(paramsString.length() - 2, paramsString.length() - 1).equals("/"))
                 paramsString = paramsString.substring(0, paramsString.length() - 2);
             return Arrays.asList(paramsString.split("&"));

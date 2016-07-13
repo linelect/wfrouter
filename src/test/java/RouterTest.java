@@ -13,7 +13,7 @@ public class RouterTest {
         Router router = new Router()
                 .GET("/articles", MyArticleIndex.class);
 
-        Routed routed = router.route(HTTPMetods.GET, "/articles/123");
-        System.out.println(routed);
+        Routed routed = router.route(HTTPMetods.GET, "/articles");
+        assertEquals(routed.object, MyArticleIndex.class);
     }
 }
